@@ -853,19 +853,19 @@
 
       <div style="display: flex; gap: 16px; margin-bottom: 16px;">
         <div class="glass" style="flex: 1; padding: 16px 18px;">
-          <div style="font-family: var(--mono); font-size: 10px; color: #7eb8ff; letter-spacing: 2px; margin-bottom: 8px;">АЛІСА</div>
+          <div style="font-family: var(--mono); font-size: 10px; color: #7eb8ff; letter-spacing: 2px; margin-bottom: 8px;">КЛІЄНТ1</div>
           <div class="formula" style="font-size: 13px; border-left-color: #7eb8ff; color: #7eb8ff; background: rgba(126,184,255,0.05);">A = g<sup>a</sup> mod p</div>
         </div>
         <div class="glass" style="flex: 1; padding: 16px 18px;">
-          <div style="font-family: var(--mono); font-size: 10px; color: var(--accent); letter-spacing: 2px; margin-bottom: 8px;">БОБ</div>
+          <div style="font-family: var(--mono); font-size: 10px; color: var(--accent); letter-spacing: 2px; margin-bottom: 8px;">КЛІЄНТ2</div>
           <div class="formula" style="font-size: 13px;">B = g<sup>b</sup> mod p</div>
         </div>
       </div>
 
       <div class="glass" style="padding: 16px 20px; border-color: rgba(0,229,200,0.3); background: rgba(0,229,200,0.04);">
         <div style="font-family: var(--mono); font-size: 10px; color: var(--accent); letter-spacing: 2px; margin-bottom: 10px;">СПІЛЬНИЙ СЕКРЕТ</div>
-        <div class="formula" style="margin-bottom: 8px; font-size: 13px;">Аліса: B<sup>a</sup> mod p = g<sup>a·b</sup> mod p</div>
-        <div class="formula" style="font-size: 13px;">Боб:   A<sup>b</sup> mod p = g<sup>a·b</sup> mod p</div>
+        <div class="formula" style="margin-bottom: 8px; font-size: 13px;">Клієнт1: B<sup>a</sup> mod p = g<sup>a·b</sup> mod p</div>
+        <div class="formula" style="font-size: 13px;">Клієнт2:   A<sup>b</sup> mod p = g<sup>a·b</sup> mod p</div>
       </div>
     </div>
 
@@ -873,8 +873,8 @@
       <!-- visual flow -->
       <div style="display: flex; flex-direction: column; align-items: center; gap: 6px; padding: 18px; background: rgba(0,0,0,0.3); border: 1px solid rgba(126,184,255,0.15); border-radius: 14px;">
         <div style="display: flex; gap: 80px; margin-bottom: 6px;">
-          <div class="flow-box" style="border-color: rgba(126,184,255,0.3); min-width: 110px;"><strong style="color: #7eb8ff;">Аліса</strong>приватний: a</div>
-          <div class="flow-box" style="min-width: 110px;"><strong>Боб</strong>приватний: b</div>
+          <div class="flow-box" style="border-color: rgba(126,184,255,0.3); min-width: 110px;"><strong style="color: #7eb8ff;">Клієнт1</strong>приватний: a</div>
+          <div class="flow-box" style="min-width: 110px;"><strong>Клієнт2</strong>приватний: b</div>
         </div>
         <div style="font-family: var(--mono); font-size: 12px; color: var(--text-dim);">↓ обмін публічними A, B ↓</div>
         <div style="display: flex; gap: 80px;">
@@ -922,8 +922,8 @@
     <span class="cn">BigInteger</span> g = <span class="num">17</span>;
 
     <span class="cm">// Приватні ключі (генеруються локально)</span>
-    <span class="cn">BigInteger</span> a = <span class="num">1234</span>; <span class="cm">// Аліса</span>
-    <span class="cn">BigInteger</span> b = <span class="num">5678</span>; <span class="cm">// Боб</span>
+    <span class="cn">BigInteger</span> a = <span class="num">1234</span>; <span class="cm">// Клієнт1</span>
+    <span class="cn">BigInteger</span> b = <span class="num">5678</span>; <span class="cm">// Клієнт2</span>
 
     <span class="cm">// Публічні значення</span>
     <span class="cn">BigInteger</span> A = <span class="cn">BigInteger</span>.<span class="fn">ModPow</span>(g, a, p);
@@ -942,10 +942,10 @@
     <div style="display: flex; flex-direction: column; gap: 12px;">
       <div class="glass" style="padding: 18px 22px;">
         <div style="font-family: var(--mono); font-size: 10px; letter-spacing: 2px; color: #7eb8ff; margin-bottom: 12px;">ВИВІД ПРОГРАМИ</div>
-        <div class="result-row">Аліса надсилає: <span>601</span></div>
-        <div class="result-row">Боб надсилає: <span>3112</span></div>
-        <div class="result-row">Спільний ключ Аліси: <span>2816</span></div>
-        <div class="result-row">Спільний ключ Боба: <span>2816</span></div>
+        <div class="result-row">Клієнт1 надсилає: <span>601</span></div>
+        <div class="result-row">Клієнт2 надсилає: <span>3112</span></div>
+        <div class="result-row">Спільний ключ Клієнта1: <span>2816</span></div>
+        <div class="result-row">Спільний ключ Клієнта2: <span>2816</span></div>
         <div class="result-row" style="border-color: rgba(0,229,200,0.3);">Однакові? <span>True ✓</span></div>
       </div>
 
@@ -1223,21 +1223,21 @@
 
       <div style="display: flex; flex-direction: column; gap: 10px; margin-bottom: 16px;">
         <div class="glass" style="padding: 14px 18px; display: flex; gap: 14px; align-items: center;">
-          <div style="font-size: 20px;">⚡</div>
+          <div style="font-size: 20px;"></div>
           <div>
             <div style="font-family: var(--head); font-size: 14px; font-weight: 600; margin-bottom: 3px;">Векторні/матричні операції</div>
             <div style="font-family: var(--head); font-size: 13px; color: var(--text-dim);">Оптимізовані SIMD обчислення для ML-KEM та ECDH</div>
           </div>
         </div>
         <div class="glass" style="padding: 14px 18px; display: flex; gap: 14px; align-items: center;">
-          <div style="font-size: 20px;">🔀</div>
+          <div style="font-size: 20px;"></div>
           <div>
             <div style="font-family: var(--head); font-size: 14px; font-weight: 600; margin-bottom: 3px;">Гібридний обмін ключами</div>
             <div style="font-family: var(--head); font-size: 13px; color: var(--text-dim);">ECDH + ML-KEM одночасно — захист зараз і в пост-квантову еру</div>
           </div>
         </div>
         <div class="glass" style="padding: 14px 18px; display: flex; gap: 14px; align-items: center;">
-          <div style="font-size: 20px;">🔄</div>
+          <div style="font-size: 20px;"></div>
           <div>
             <div style="font-family: var(--head); font-size: 14px; font-weight: 600; margin-bottom: 3px;">Double Ratchet 2.0</div>
             <div style="font-family: var(--head); font-size: 13px; color: var(--text-dim);">Signal Protocol з пост-квантовим рапчетом ключів</div>
@@ -1365,19 +1365,19 @@
 
   <div style="display: flex; flex-direction: column; gap: 10px; margin-bottom: 24px;">
     <div class="conc-item">
-      <div class="conc-icon">🔐</div>
+      <div class="conc-icon"></div>
       <div class="conc-text"><strong>Класичні примітиви — основа.</strong> RSA та Diffie–Hellman забезпечили безпечне спілкування на 50 років. Їхня математика — факторизація та дискретний логарифм — досі стійка до класичних атак.</div>
     </div>
     <div class="conc-item">
-      <div class="conc-icon">📡</div>
+      <div class="conc-icon"></div>
       <div class="conc-text"><strong>Signal Protocol — гібридний стандарт.</strong> Поєднання ECDH + Double Ratchet + AES-256 забезпечує Forward Secrecy та захист навіть при компрометації одного ключа.</div>
     </div>
     <div class="conc-item">
-      <div class="conc-icon">⚛️</div>
-      <div class="conc-text"><strong>Постквантова ера вже тут.</strong> ML-KEM (Kyber, NIST FIPS 203, 2024) стійкий до алгоритму Шора. Вже розгортається в Chrome, Cloudflare, Signal і Apple iMessage у 2025–2026 роках.</div>
+      <div class="conc-icon"></div>
+      <div class="conc-text"><strong>Постквантова ера:</strong> ML-KEM (Kyber, NIST FIPS 203, 2024) стійкий до алгоритму Шора. Вже розгортається в Chrome, Cloudflare, Signal і Apple iMessage у 2025–2026 роках.</div>
     </div>
     <div class="conc-item" style="border-color: rgba(0,229,200,0.25); background: rgba(0,229,200,0.04);">
-      <div class="conc-icon">🔥</div>
+      <div class="conc-icon"></div>
       <div class="conc-text"><strong>VulcanCore — майбутнє.</strong> Оптимізовані матрично-векторні операції, аналогічно Vulkan API для GPU, дозволяють будувати ефективні та стійкі криптографічні ядра для месенджерів нового покоління.</div>
     </div>
   </div>
@@ -1389,10 +1389,6 @@
 
   <div class="slide-num">13 / 14</div>
 </div>
-
-<!-- ══════════════════════════════════════════════════════════ -->
-<!-- SLIDE 14 — ЛІТЕРАТУРА -->
-<!-- ══════════════════════════════════════════════════════════ -->
 <div class="slide" id="s14">
   <div class="slide-accent-top"></div>
   <div class="grid-bg"></div>
@@ -1409,7 +1405,7 @@
     <div style="display: flex; gap: 18px; align-items: flex-start; padding: 16px 22px; background: rgba(255,255,255,0.04); border: 1px solid rgba(0,229,200,0.13); border-radius: 12px;">
       <div style="min-width: 28px; height: 28px; border-radius: 50%; background: rgba(0,229,200,0.1); border: 1px solid rgba(0,229,200,0.3); display: flex; align-items: center; justify-content: center; font-family: var(--mono); font-size: 12px; color: var(--accent); flex-shrink: 0; margin-top: 1px;">1</div>
       <div style="line-height: 1.7;">
-        <span style="font-family: var(--head); font-size: 15px; color: var(--text);">RSA Algorithm in Cryptography - GeeksforGeeks</span>
+        <span style="font-family: var(--head); font-size: 15px; color: var(--text);">RSA Algorithm in Cryptography – GeeksforGeeks</span>
         <span style="font-family: var(--head); font-size: 14px; color: var(--text-dim);"> // GeeksforGeeks: </span>
         <span style="font-family: var(--mono); font-size: 12px; color: rgba(232,244,248,0.4);">[Веб-сайт].</span>
         <span style="font-family: var(--head); font-size: 14px; color: var(--text-dim);"> URL: </span>
@@ -1422,7 +1418,7 @@
     <div style="display: flex; gap: 18px; align-items: flex-start; padding: 16px 22px; background: rgba(255,255,255,0.04); border: 1px solid rgba(0,229,200,0.13); border-radius: 12px;">
       <div style="min-width: 28px; height: 28px; border-radius: 50%; background: rgba(0,229,200,0.1); border: 1px solid rgba(0,229,200,0.3); display: flex; align-items: center; justify-content: center; font-family: var(--mono); font-size: 12px; color: var(--accent); flex-shrink: 0; margin-top: 1px;">2</div>
       <div style="line-height: 1.7;">
-        <span style="font-family: var(--head); font-size: 15px; color: var(--text);">Implementation of Diffie-Hellman Algorithm - GeeksforGeeks</span>
+        <span style="font-family: var(--head); font-size: 15px; color: var(--text);">Implementation of Diffie-Hellman Algorithm – GeeksforGeeks</span>
         <span style="font-family: var(--head); font-size: 14px; color: var(--text-dim);"> // GeeksforGeeks: </span>
         <span style="font-family: var(--mono); font-size: 12px; color: rgba(232,244,248,0.4);">[Веб-сайт].</span>
         <span style="font-family: var(--head); font-size: 14px; color: var(--text-dim);"> URL: </span>
@@ -1448,7 +1444,7 @@
     <div style="display: flex; gap: 18px; align-items: flex-start; padding: 16px 22px; background: rgba(255,255,255,0.04); border: 1px solid rgba(0,229,200,0.13); border-radius: 12px;">
       <div style="min-width: 28px; height: 28px; border-radius: 50%; background: rgba(0,229,200,0.1); border: 1px solid rgba(0,229,200,0.3); display: flex; align-items: center; justify-content: center; font-family: var(--mono); font-size: 12px; color: var(--accent); flex-shrink: 0; margin-top: 1px;">4</div>
       <div style="line-height: 1.7;">
-        <span style="font-family: var(--head); font-size: 15px; color: var(--text);">Vulkan Tutorial — Introduction</span>
+        <span style="font-family: var(--head); font-size: 15px; color: var(--text);">Vulkan Tutorial – Introduction</span>
         <span style="font-family: var(--head); font-size: 14px; color: var(--text-dim);"> // Vulkan Documentation: </span>
         <span style="font-family: var(--mono); font-size: 12px; color: rgba(232,244,248,0.4);">[Веб-сайт].</span>
         <span style="font-family: var(--head); font-size: 14px; color: var(--text-dim);"> URL: </span>
